@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "864878214219",
+    "project_id": "sneex-cbc6a",
+    "storage_bucket": "sneex-cbc6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864878214219:android:b3d9b00b63c587ede8a1ce",
+        "android_client_info": {
+          "package_name": "com.santosenoque.untitled"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "864878214219-j8cl5nn2f9asttr5ak02r7g3fb62tdjd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhUdylNPavieHOIpuJI-KOVbuhL-6bAJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864878214219-j8cl5nn2f9asttr5ak02r7g3fb62tdjd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
