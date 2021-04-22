@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/screens/authentication/auth.dart';
-import 'package:untitled/screens/home/home.dart';
 import 'package:get/get.dart';
+import 'package:untitled/controllers/cart_controller.dart';
+import 'package:untitled/controllers/product_controller.dart';
 import 'package:untitled/screens/splash/splash.dart';
 
 import 'constants/firebase.dart';
@@ -12,7 +12,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialization.then((value){
     Get.put(AppController());
-    Get.put(AuthController());
+    Get.put(UserController());
+    Get.put(ProducsController());
+    Get.put(CartController());
+
   });
   runApp(MyApp());
 }

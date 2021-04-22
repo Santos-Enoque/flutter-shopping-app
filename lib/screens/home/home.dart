@@ -42,11 +42,11 @@ class HomeScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.black
                 ),
-                  accountName: Text(authController.userModel.value.name ?? ""),
-                  accountEmail: Text(authController.userModel.value.email ?? ""))),
+                  accountName: Text(userController.userModel.value.name ?? ""),
+                  accountEmail: Text(userController.userModel.value.email ?? ""))),
               ListTile(
                 onTap: () {
-                  authController.signOut();
+                  userController.signOut();
                 },
                 leading: Icon(Icons.exit_to_app),
                 title: Text("Log out"),

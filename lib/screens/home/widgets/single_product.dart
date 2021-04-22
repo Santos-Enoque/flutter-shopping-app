@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/constants/controllers.dart';
 import 'package:untitled/models/product.dart';
 import 'package:untitled/widgets/custom_text.dart';
 
@@ -27,7 +28,7 @@ class SingleProductWidget extends StatelessWidget {
                   topLeft: Radius.circular(15),
                   topRight: Radius.circular(15),
                 ),
-                child: Image.asset(
+                child: Image.network(
                   product.image,
                   width: double.infinity,
                 )),
@@ -60,7 +61,9 @@ class SingleProductWidget extends StatelessWidget {
               ),
               IconButton(
                   icon: Icon(Icons.add_shopping_cart),
-                  onPressed: () {})
+                  onPressed: () {
+                    cartController.addProductToCart(product);
+                  })
             ],
           ),
         ],

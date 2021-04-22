@@ -9,7 +9,7 @@ class ProductModel{
    String image;
    String name;
    String brand;
-   String price;
+   double price;
 
   ProductModel({this.id, this.image, this.name, this.brand, this.price});
 
@@ -18,7 +18,7 @@ class ProductModel{
     image = data[IMAGE];
     name = data[NAME];
     brand = data[BRAND];
-    price = data[PRICE];
+    price = data[PRICE].toDouble();
   }
 
 }

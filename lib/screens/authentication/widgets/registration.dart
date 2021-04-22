@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:untitled/constants/controllers.dart';
 import 'package:untitled/widgets/custom_btn.dart';
 
@@ -34,7 +33,7 @@ class RegistrationWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: authController.name,
+                    controller: userController.name,
                     decoration: InputDecoration(
                         icon: Icon(Icons.person),
                         fillColor: Colors.white,
@@ -58,7 +57,7 @@ class RegistrationWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: authController.email,
+                    controller: userController.email,
                     decoration: InputDecoration(
                         icon: Icon(Icons.email_outlined),
                         fillColor: Colors.white,
@@ -83,7 +82,7 @@ class RegistrationWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: authController.password,
+                    controller: userController.password,
                     decoration: InputDecoration(
                         icon: Icon(Icons.lock),
                         fillColor: Colors.white,
@@ -98,7 +97,7 @@ class RegistrationWidget extends StatelessWidget {
             padding: const EdgeInsets.all(25),
             child: CustomButton(
                 text: "Register", onTap: (){
-                    authController.signUp();
+                    userController.signUp();
                 }),
           )
         ],

@@ -15,7 +15,7 @@ class CartItemWidget extends StatelessWidget {
         Padding(
           padding:
           const EdgeInsets.all(8.0),
-          child: Image.asset(
+          child: Image.network(
             cartItem.image,
             width: 80,
           ),
@@ -42,7 +42,7 @@ class CartItemWidget extends StatelessWidget {
                       const EdgeInsets.all(
                           8.0),
                       child: CustomText(
-                        text: cartItem.quantity,
+                        text: cartItem.quantity.toString(),
                       ),
                     ),
                     IconButton(
