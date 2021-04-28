@@ -50,7 +50,6 @@ class CartController extends GetxController {
       userController.updateUserData({
         "cart": FieldValue.arrayRemove([cartItem.toJson()])
       });
-      Get.snackbar("Item added", "${cartItem.name} was removed from your cart");
     } catch (e) {
       Get.snackbar("Error", "Cannot remove this item");
       debugPrint(e.message);
@@ -76,6 +75,19 @@ class CartController extends GetxController {
       removeCartItem(item);
     }else{
       removeCartItem(item);
+      item.quantity--;
+          userController.updateUserData({
+        "cart": FieldValue.arrayUnion([item.toJson()])
+      });
     }
+  }
+
+    void increaseQuantity(CartItemModel item){
+      removeCartItem(item);
+      item.quantity++;
+      logger.i({"quantity": item.quantity});
+          userController.updateUserData({
+        "cart": FieldValue.arrayUnion([item.toJson()])
+      });
   }
 }

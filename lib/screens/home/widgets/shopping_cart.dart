@@ -27,11 +27,18 @@ class ShoppingCartWidget extends StatelessWidget {
             SizedBox(
               height: 5,
             ),
-            Obx(()=>Column(
-              children: userController.userModel.value.cart
-                  .map((cartItem) => CartItemWidget(cartItem: cartItem,))
+           Column(
+              children: <CartItemModel>[
+                CartItemModel(
+                  name: "Nike shoes",
+                  image: image1,
+                  cost: 12.0,
+                  quantity: 2
+
+                )
+              ].map((cartItem) => CartItemWidget(cartItem: cartItem,))
                   .toList(),
-            )),
+            )
           ],
         ),
         Positioned(
@@ -39,8 +46,8 @@ class ShoppingCartWidget extends StatelessWidget {
             child: Container(
               width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.all(8),
-              child: Obx(() => CustomButton(
-                  text: "Pay (\$${cartController.totalCartPrice.value.toStringAsFixed(2)})", onTap: () {}),)
+              child: CustomButton(
+                  text: "Pay (\$${123})", onTap: () {})
             ))
       ],
     );
