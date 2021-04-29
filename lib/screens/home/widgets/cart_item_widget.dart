@@ -16,7 +16,7 @@ class CartItemWidget extends StatelessWidget {
         Padding(
           padding:
           const EdgeInsets.all(8.0),
-          child: Image.asset(
+          child: Image.network(
             cartItem.image,
             width: 80,
           ),
@@ -38,6 +38,7 @@ class CartItemWidget extends StatelessWidget {
                         icon: Icon(
                             Icons.chevron_left),
                         onPressed: () {
+                          cartController.decreaseQuantity(cartItem);
                         }),
                     Padding(
                       padding:
@@ -51,6 +52,7 @@ class CartItemWidget extends StatelessWidget {
                         icon: Icon(Icons
                             .chevron_right),
                         onPressed: () {
+                          cartController.increaseQuantity(cartItem);
                         }),
                   ],
                 )
