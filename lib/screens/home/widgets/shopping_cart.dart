@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:untitled/constants/asset_paths.dart';
 import 'package:untitled/constants/controllers.dart';
-import 'package:untitled/models/cart_item.dart';
 import 'package:untitled/screens/home/widgets/cart_item_widget.dart';
 import 'package:untitled/widgets/custom_btn.dart';
 import 'package:untitled/widgets/custom_text.dart';
