@@ -4,6 +4,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:untitled/constants/controllers.dart';
 import 'package:untitled/screens/home/widgets/products.dart';
 import 'package:untitled/screens/home/widgets/shopping_cart.dart';
+import 'package:untitled/screens/payments/payments.dart';
 import 'package:untitled/widgets/custom_text.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -44,6 +45,15 @@ class HomeScreen extends StatelessWidget {
                 ),
                   accountName: Text(userController.userModel.value.name ?? ""),
                   accountEmail: Text(userController.userModel.value.email ?? ""))),
+              ListTile(
+                leading: Icon(Icons.book),
+                title: CustomText(
+                  text: "Payments History",
+                ),
+                onTap: ()async {
+                 paymentsController.getPaymentHistory();
+                },
+              ),
               ListTile(
                 onTap: () {
                   userController.signOut();

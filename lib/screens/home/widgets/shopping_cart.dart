@@ -38,7 +38,9 @@ class ShoppingCartWidget extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.all(8),
               child: Obx(() => CustomButton(
-                  text: "Pay (\$${cartController.totalCartPrice.value.toStringAsFixed(2)})", onTap: () {}),)
+                  text: "Pay (\$${cartController.totalCartPrice.value.toStringAsFixed(2)})", onTap: () {
+                    paymentsController.createPaymentMethod();
+                  }),)
             ))
       ],
     );

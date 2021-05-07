@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:untitled/constants/app_constants.dart';
 import 'package:untitled/models/cart_item.dart';
 
 class UserModel {
@@ -31,4 +30,6 @@ class UserModel {
     }
     return _result;
   }
+
+  List cartItemsToJson() => cart.map((item) => item.toJson()).toList();
 }

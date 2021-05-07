@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled/controllers/cart_controller.dart';
+import 'package:untitled/controllers/payments_controller.dart';
 import 'package:untitled/controllers/product_controller.dart';
 import 'package:untitled/screens/splash/splash.dart';
 
@@ -15,7 +16,7 @@ void main() async {
     Get.put(UserController());
     Get.put(ProducsController());
     Get.put(CartController());
-
+    Get.put(PaymentsController());
   });
   runApp(MyApp());
 }
