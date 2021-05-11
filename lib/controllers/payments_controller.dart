@@ -26,48 +26,8 @@ class PaymentsController extends GetxController {
         androidPayMode: 'test'));
   }
 
-  void checkIfNativePayReady() async {
-    bool deviceSupportNativePay = await StripePayment.deviceSupportsNativePay();
-    bool isNativeReady = await StripePayment.canMakeNativePayPayments(
-        ['american_express', 'visa', 'maestro', 'master_card']);
-    deviceSupportNativePay && isNativeReady
-        ? createPaymentMethodNative()
-        : createPaymentMethod();
-  }
 
-  Future<void> createPaymentMethodNative() async {
-    print('started NATIVE payment...');
-    StripePayment.setStripeAccount(null);
-    List<ApplePayItem> items = [];
-    items.add(ApplePayItem(
-      label: 'Demo Order',
-      amount: cartController.totalCartPrice.value.toStringAsFixed(2),
-    ));
 
-    //step 1: add card
-    PaymentMethod paymentMethod = PaymentMethod();
-    Token token = await StripePayment.paymentRequestWithNativePay(
-      androidPayOptions: AndroidPayPaymentRequest(
-        totalPrice: cartController.totalCartPrice.value.toStringAsFixed(2),
-        currencyCode: 'USD',
-      ),
-      applePayOptions: ApplePayPaymentOptions(
-        countryCode: 'US',
-        currencyCode: 'USD',
-        items: items,
-      ),
-    );
-    paymentMethod = await StripePayment.createPaymentMethod(
-      PaymentMethodRequest(
-        card: CreditCard(
-          token: token.tokenId,
-        ),
-      ),
-    );
-    paymentMethod != null
-        ? processPaymentAsDirectCharge(paymentMethod)
-        : _showPaymentFailedAlert();
-  }
 
   Future<void> createPaymentMethod() async {
     StripePayment.setStripeAccount(null);
